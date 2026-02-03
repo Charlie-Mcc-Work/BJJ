@@ -1,0 +1,19 @@
+# Compiled files
+*.o
+*.out
+bjj
+
+# Build directories
+build/
+bin/
+obj/
+
+# Editor/IDE junk
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS junk
+.DS_Store
