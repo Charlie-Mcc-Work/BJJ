@@ -10,7 +10,8 @@ public:
         std::string description;
         std::vector<std::string> 
         double successRate;
+        std::string defenses;
 
         // Constructor
-        Submission(std::string subName, std::string desc, double chances);
+        Submission(std::string subName, std::string desc, double chances, std::string defenses);
 
