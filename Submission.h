@@ -8,12 +8,19 @@ class Submission {
 public:
         std::string name;
         std::string description;
-        std::vector<std::string> 
-        double successRate;
-        std::string defenses;
+        std::string attacking_zone;
+        double baseSuccessRate;
+        std::vector<std::string> defenses;
 
         // Constructor
-        Submission(std::string subName, std::string desc, double chances, std::string defenses);
+        Submission();
+        Submission(std::string subName, std::string desc, double chances);
 
+        std::string getName();
+        std::string getDescription();
+        std::string getAttackingZone();
+        double getBaseSuccessRate();
+        std::vector<std::string> getDefenses();
+        void addDefense(std::string defense);
 };
 #endif

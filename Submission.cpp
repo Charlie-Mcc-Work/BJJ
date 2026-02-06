@@ -1,18 +1,34 @@
 #include "Submission.h"
 #include <iostream>
 
+Submission::Submission() {
+}
+
 Submission::Submission(std::string subName, std::string desc, double chances) {
     name = subName;
     description = desc;
-    successRate = chances;
+    baseSuccessRate = chances;
 }
 
-void Submission::display() {
-    std:cout << "\n=== " << name << " ===\n";
-    for (int i = 0; i < options.size(); i++) {
-        std::cout << i + 1 << ". " << options[i] << "\n";
-    }
+std::string Submission::getName() {
+    return name;
 }
 
+std::string Submission::getDescription() {
+    return description;
+}
 
-void Submission::addwkk
+std::string Submission::getAttackingZone() {
+    return attacking_zone;
+}
+
+double Submission::getBaseSuccessRate() {
+    return baseSuccessRate;
+}
+
+std::vector<std::string> Submission::getDefenses() {
+    return defenses;
+}
+void Submission::addDefense(std::string defense) {
+    defenses.push_back(defense);
+}
