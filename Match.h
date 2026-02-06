@@ -1,27 +1,33 @@
-#ifndef POSITION_H
-#define POSITION_H
+#ifndef MATCH_H
+#define MATCH_H
 
 #include <string>
-#include <vector>
+#include "Player.h"
 
-class Position {
+class Match
+{
 public:
-        std::string name;
-        std::string description;
-        int points;
-        std::vector<std::string> submissions;
-        std::vector<std::string> transitions;
 
-        // Constructor
-        Position();
-        Position(std::string posName, std::string desc, int p_points);
+    Player& p1;
+    int points1;
+    Player& p2;
+    int winner;
+    int points2;
+    int time;
 
-        // Methods
-        void addSubmission(std::string submission);
-        std::vector<std::string> getSubmissions();
-        void addTransition(std::string transition);
-        std::vector<std::string> getTransitions();
-        int getPoints();
+    // Constructor
+    Match();
+    Match(Player& player1, Player& player2, int max_time);
+
+    // Methods
+    Player& getP1();
+    int getPoints1();
+    Player& getP2();
+    int getPoints2();
+    Player& getWinner();
+    void begin();
+    bool nextTurn();
+
 };
 
 #endif

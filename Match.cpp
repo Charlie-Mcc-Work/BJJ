@@ -1,35 +1,55 @@
-#include "Position.h"
+#include "Match.h"
 #include <iostream>
 
-
-Position::Position() {
-    name = "None";
-    description = "None";
-    points = 0;
+Match::Match()
+{
+    points1 = 0;
+    points2 = 0;
+    time = 0;
+    winner = 0;
 }
 
-Position::Position(std::string posName, std::string desc, int p_points) {
-    name = posName;
-    description = desc;
-    points = p_points;
+Match::Match(Player& player1, Player& player2, int max_time)
+{
+    Match();
+    p1 = player1;
+    p1.setStartStatuses();
+    p2 = player2;
+    p2.setStartStatuses();
+    time = max_time;
 }
 
-void Position::addSubmission(std::string submission) {
-    submissions.push_back(submission);
+Player& Match::getP1() {
+    return p1;
 }
 
-std::vector<std::string> Position::getSubmissions() {
-    return submissions;
+int Match::getPoints1() {
+    return points1;
 }
 
-void Position::addTransition(std::string transition) {
-    transitions.push_back(transition);
+Player& Match::getP2() {
+    return p2;
 }
 
-std::vector<std::string> Position::getTransitions() {
-    return transitions;
+int Match::getPoints2() {
+    return points2;
 }
 
-int Position::getPoints() {
-    return points;
+Player& Match::getWinner() {
+    // Potential error, only call if game is over.
+    if (winner == 1) {
+        return getP1();
+    } else {
+        return getP2();
+    }
 }
+
+void Match::begin() {
+}
+
+// True means continue
+bool Match::nextTurn() {
+
+    return (winner == 0);
+}
+

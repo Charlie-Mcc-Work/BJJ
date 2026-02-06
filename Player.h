@@ -23,7 +23,7 @@ public:
         int getPoints();
         void setPoints(int s_points);
         int getStat(std::string stat);
-        void setStat(std::string stat, int value);
+        int setStat(std::string stat, int value);
         int getSkill(std::string skill);
         int setSkill(std::string skill, int value);
         void setStartStatuses();

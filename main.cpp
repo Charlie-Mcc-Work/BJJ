@@ -1,20 +1,26 @@
-#include "Position.h"
+#include "Match.h"
+#include "Player.h"
+#include <iostream>
 
 int main() {
-    /*
-    Position closedGuard("Closed Guard");
-    closedGuard.addOption("Armbar");
-    closedGuard.addOption("Triangle");
-    closedGuard.addOption("Hip bump sweep");
+    Player player1 = Player("Adam");
+    player1.setStat("strength", player1.getPoints());
 
-    Position mount("Mount");
-    mount.addOption("Armbar");
-    mount.addOption("Ezekiel");
-    mount.addOption("Take back");
+    Player player2 = Player("Bob");
+    player1.setSkill("triangle", player2.getPoints());
 
-    closedGuard.display();
-    mount.display();
-    */
+    int match_time = 100;
+
+    Match startMatch = Match(player1, player2, match_time); // Am I doing & right?
+
+    startMatch.begin();
+
+    while (startMatch.nextTurn()) {
+        std::cout << "P1: " << startMatch.getPoints1() << " and P2: " << startMatch.getPoints2() << std::endl;
+    }
+
+    std::cout << "Winner: " << startMatch.getWinner().getName() << std::endl;
+
 
     return 0;
 }

@@ -1,5 +1,4 @@
 #include "Player.h"
-#include <iostream>
 
 
 Player::Player() {
@@ -45,8 +44,12 @@ int Player::getStat(std::string stat) {
     return stats["stat"];
 }
 
-void Player::setStat(std::string stat, int value) {
-    stats[stat] = value;
+int Player::setStat(std::string stat, int value) {
+    if (value <= getPoints()) {
+        stats[stat] = value;
+        setPoints(getPoints() - value);
+    } 
+    return points;
 }
 
 int Player::getSkill(std::string skill) {
