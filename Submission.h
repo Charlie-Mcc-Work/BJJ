@@ -15,3 +15,5 @@ public:
         // Constructor
         Submission(std::string subName, std::string desc, double chances, std::string defenses);
 
+};
+#endif

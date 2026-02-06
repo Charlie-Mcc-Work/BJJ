@@ -1,6 +1,7 @@
 #include "Position.h"
 
 int main() {
+    /*
     Position closedGuard("Closed Guard");
     closedGuard.addOption("Armbar");
     closedGuard.addOption("Triangle");
@@ -13,6 +14,7 @@ int main() {
 
     closedGuard.display();
     mount.display();
+    */
 
     return 0;
 }
